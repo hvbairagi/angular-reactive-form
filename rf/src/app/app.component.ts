@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
-import { PasswordValidator } from './shared/paassword.validator';
+import { PasswordValidator } from './shared/password.validator';
 import { forbiddenNameValidator } from './shared/user-name.validator';
 import { RegistrationService } from './registration.service';
+import { PasswordStrengthValidator } from './shared/password2.validator';
 
 @Component({
   selector: 'app-root',
@@ -30,8 +31,8 @@ export class AppComponent implements OnInit {
         ],
         email: [''],
         subscribe: [false],
-        password: [''],
-        confirmPassword: [''],
+        password: ['', [Validators.required, PasswordStrengthValidator]],
+        confirmPassword: ['', [Validators.required, PasswordStrengthValidator]],
         address: this.fb.group({
           city: [''],
           state: [''],

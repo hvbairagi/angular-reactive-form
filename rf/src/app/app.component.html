@@ -2,6 +2,7 @@
   <h2>Registration Form</h2>
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
     {{ registrationForm.value | json }}
+    {{ registrationForm.valid }}
     <div class="form-group">
       <label>Username</label>
       <input
@@ -79,6 +80,14 @@
       <input formControlName="password" type="password" class="form-control" />
     </div>
 
+    <p
+      *ngIf="
+        registrationForm.controls.password.hasError('PasswordStrengthValidator')
+      "
+    >
+      password pattern wrong
+    </p>
+
     <div class="form-group">
       <label>Confirm Password</label>
       <input
@@ -109,7 +118,16 @@
       </div>
     </div>
 
-    <button class="btn btn-primary" type="submit">Register</button>
+    <button
+      [disabled]="!registrationForm.valid"
+      (click)="loadApiData()"
+      class="btn btn-secondary ml-2"
+      type="button"
+      class="btn btn-primary"
+      type="submit"
+    >
+      Register
+    </button>
     <button
       [disabled]="!registrationForm.valid"
       (click)="loadApiData()"
