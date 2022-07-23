@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, UntypedFormArray } from '@angular/forms';
 import { PasswordValidator } from './shared/password.validator';
 import { forbiddenNameValidator } from './shared/user-name.validator';
 import { RegistrationService } from './registration.service';
@@ -12,11 +12,11 @@ import { PasswordStrengthValidator } from './shared/password2.validator';
 })
 export class AppComponent implements OnInit {
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private _registrationService: RegistrationService
   ) {}
 
-  registrationForm: FormGroup;
+  registrationForm: UntypedFormGroup;
 
   ngOnInit() {
     this.registrationForm = this.fb.group(
@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
   }
 
   get alternateEmails() {
-    return this.registrationForm.get('alternateEmails') as FormArray;
+    return this.registrationForm.get('alternateEmails') as UntypedFormArray;
   }
 
   addAlternateEmail() {
