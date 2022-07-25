@@ -1,0 +1,10 @@
+<h1>Hello</h1>
+<p *ngIf="obsValue | async as value; else elseBlock">{{ value }}</p>
+
+<ng-template #elseBlock>Observable is loading. Please wait!</ng-template>
+
+<p *ngIf="obsValue | async">Observable has received data.</p>
+
+<ul>
+  <li *ngFor="let breed of (hounds | async)?.message">{{ breed }}</li>
+</ul>

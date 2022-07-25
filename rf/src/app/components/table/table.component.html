@@ -1,0 +1,24 @@
+<table style="border: 1px solid; margin: 50px auto" [ngClass]="className">
+  <thead>
+    <th>Number</th>
+    <th>Activity</th>
+    <th>Type</th>
+    <th>Participants</th>
+    <th>Price</th>
+    <th>Key</th>
+    <th>Accessibility</th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let d of data; let i = index; trackBy: trackByFunction">
+      <td>{{ i + 1 }}</td>
+      <td>{{ d.activity }}</td>
+      <td>{{ d.type | meraUppercase: "hello":"hi":"how":"are":"you?" }}</td>
+      <td>{{ d.participants }}</td>
+      <td>{{ d.price }}</td>
+      <td>{{ d.key }}</td>
+      <td>{{ d.accessibility }}</td>
+      <button (click)="onDelete(i)">Delete</button>
+    </tr>
+  </tbody>
+</table>
