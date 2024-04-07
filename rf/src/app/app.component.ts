@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ViewChildComponent } from './components/view-child/view-child.component';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  @ViewChild('tem_ref_var', { static: true }) child: ViewChildComponent;
+  @ViewChild('para', { static: true }) p: ElementRef;
+
   constructor() {}
 
-  value = true;
-
   ngOnInit() {}
+
+  increment() {
+    this.child.increment();
+  }
+
+  decrement() {
+    this.child.decrement();
+  }
+
+  changePara() {
+    this.p.nativeElement.innerText = 'Bye guys';
+  }
 }

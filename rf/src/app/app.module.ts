@@ -13,6 +13,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { TooltipDirective } from './directives/tooltip.directive';
 import { MeraUppercasePipe } from './pipes/mera-uppercase.pipe';
 import { AsyncDataComponent } from './components/async-data/async-data.component';
+import { ViewChildComponent } from './components/view-child/view-child.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AsyncDataComponent } from './components/async-data/async-data.component
     TableComponent,
     MeraUppercasePipe,
     AsyncDataComponent,
+    ViewChildComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   bootstrap: [AppComponent],
