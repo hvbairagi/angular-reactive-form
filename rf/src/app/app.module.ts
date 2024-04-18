@@ -14,6 +14,9 @@ import { TooltipDirective } from './directives/tooltip.directive';
 import { MeraUppercasePipe } from './pipes/mera-uppercase.pipe';
 import { AsyncDataComponent } from './components/async-data/async-data.component';
 import { ViewChildComponent } from './components/view-child/view-child.component';
+import { BasicDirective } from './directives/basic.directive';
+import { DirectiveComponent } from './components/directive/directive.component';
+import { BetterDirective } from './directives/better.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { ViewChildComponent } from './components/view-child/view-child.component
     MeraUppercasePipe,
     AsyncDataComponent,
     ViewChildComponent,
+    BasicDirective,
+    DirectiveComponent,
+    BetterDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   bootstrap: [AppComponent],

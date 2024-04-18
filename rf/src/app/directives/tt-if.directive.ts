@@ -21,7 +21,10 @@ export class TtIfDirective implements OnInit {
   constructor(
     private viewContainer: ViewContainerRef,
     private templateRef: TemplateRef<any>
-  ) {}
+  ) {
+    console.log('view container: ', viewContainer);
+    console.log('template ref: ', templateRef);
+  }
 
   ngOnInit(): void {}
 
