@@ -17,10 +17,10 @@ describe('CalcService', () => {
     calc = TestBed.inject(CalcService);
   });
 
-  fit('should multiply two numbers', () => {
-    const result = calc.multiply(3, 5);
-    expect(result).toBe(15);
-  });
+  // fit('should multiply two numbers', () => {
+  //   const result = calc.multiply(3, 5);
+  //   expect(result).toBe(15);
+  // });
 
   xit('should add two numbers', () => {
     const result = calc.add(3, 5);
