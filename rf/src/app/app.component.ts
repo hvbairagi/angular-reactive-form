@@ -6,9 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'rf';
+  title = 'unit-testing';
+  btnText = 'Subscribe';
+  isSubscribed = false;
 
   constructor() {}
 
   ngOnInit() {}
+
+  subscribe() {
+    setTimeout(() => {
+      this.isSubscribed = true;
+      this.btnText = 'Subscribed';
+    }, 1000);
+  }
 }
